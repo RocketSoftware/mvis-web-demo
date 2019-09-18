@@ -1,0 +1,11 @@
+//- © 2019 Rocket Software, Inc. or its affiliates. All Rights Reserved
+//- Written by Andrew Gorovoy 
+mixin tableRow(title,producer,genre,rating,id)
+    tr
+        td(class='title' value=title) 
+            a(href="#" class="link-prod-info" rel=id)= title
+        td(class='producer' value=producer )= producer
+        td(class='genre' value=genre)= genre
+        td(class='rating' value=rating)= rating
+
+

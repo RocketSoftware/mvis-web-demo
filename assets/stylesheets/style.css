@@ -1,0 +1,131 @@
+/* © 2019 Rocket Software, Inc. or its affiliates. All Rights Reserved
+Written by Andrew Gorovoy */
+
+
+#filter {
+  margin-top: 3px;
+  width: 15%;
+  /* margin-top: 60px; */
+  display: inline-block;
+  
+}
+
+
+
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  margin: 5px 1px;
+  width: 100%;
+
+}
+
+
+.active, .collapsible:hover {
+  background-color: #555;
+
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  /* padding: 0 18px;
+  margin: 12px; */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+  /* display: inline-block; */
+
+}
+
+#tables {
+  width: 30%
+  /* margin: auto; */
+  margin-top: 0;
+  margin-left: 12px;
+  border: #777 solid 1px;
+  background-color: #f1f1f1;
+  border-radius: 15px;
+  padding: 5px;
+  top: 1000px;
+}
+
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: -50px;
+  right: -25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-right .5s;
+  background-color: aliceblue; 
+  padding: 20px;
+  /* display: inline-block; */
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.btn-primary {
+  margin: 5px;
+
+}
+
+button.tablink {
+  margin: 10px;
+  border-radius: 15px;
+
+}
+
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+

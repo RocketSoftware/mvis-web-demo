@@ -1,0 +1,8 @@
+//- © 2019 Rocket Software, Inc. or its affiliates. All Rights Reserved
+//- Written by Andrew Gorovoy 
+extends layout
+
+block content
+  h1= message
+  h2= error.status
+  pre #{error.stack}

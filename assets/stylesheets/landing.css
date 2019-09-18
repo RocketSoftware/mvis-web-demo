@@ -1,0 +1,64 @@
+
+/* © 2019 Rocket Software, Inc. or its affiliates. All Rights Reserved
+Written by Andrew Gorovoy */
+
+body {
+    background-color: #4e73df;
+}
+#wrapper {
+    margin: auto;
+    width: 760px;
+    padding-top: 200px;
+
+}
+#form {
+    
+    width: 100%;
+    margin: auto 200;
+    display: block;
+    text-align: center;
+    color: white;
+    border: white solid 2px;
+    border-radius: 15px;
+
+
+}
+
+h1 {
+    margin-top: 130px;
+}
+p {
+
+    width: 350px;
+    margin: auto  ;
+    margin-top: 7px;
+    margin-bottom: 50px;
+}
+
+#form-div {
+    text-align: center;
+    display: block;
+}
+
+form {
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+    padding: 0;
+}
+label {
+    display: block;
+    margin: auto 5;
+    width: 100%;
+}
+
+input {
+    margin: auto;
+    display: block;
+    border: none;
+    width: 200px;
+    height: 40px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+}

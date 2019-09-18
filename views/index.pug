@@ -1,0 +1,156 @@
+//- © 2019 Rocket Software, Inc. or its affiliates. All Rights Reserved
+//- Written by Andrew Gorovoy 
+
+include mixins/navOption.pug
+include mixins/navItem.pug
+include mixins/tableRow.pug
+include mixins/dropDown.pug
+include mixins/search.pug
+
+//- This is the main dashboard and landing page
+
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
+  title Dashboard - Brand
+  link(rel='stylesheet' href='/bootstrap/css/bootstrap.min.css')
+  link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i')
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.1/css/all.css')
+  link(rel='stylesheet' href='/stylesheets/Filter.css')
+
+#wrapper
+  //- // Start: Sidebar   This is the side bar and filter section
+  nav.navbar.navbar-dark.align-items-start.sidebar.sidebar-dark.accordion.bg-gradient-primary.p-0
+    .container-fluid.d-flex.flex-column.p-0
+      a.navbar-brand.d-flex.justify-content-center.align-items-center.sidebar-brand.m-0(href='#')
+        .sidebar-brand-icon.rotate-n-15
+          i.fas.fa-database
+        .sidebar-brand-text.mx-3
+          span MVOOVIES
+      hr.sidebar-divider.my-0
+      ul#accordionSidebar.nav.navbar-nav.text-light
+        li.nav-item(role='presentation')
+          a.nav-link.active(href='index.html')
+            i.fas.fa-filter
+            span &nbsp;Filters
+        hr.sidebar-divider
+        .sidebar-heading
+          p.mb-0
+          //- These are the filters, passing in data to html components
+        +navItem("Display:", "display-num",[10,20,50,100])
+        +navItem("Rating:", "rating",['G','PG','PG-13','R','Not Rated'])
+        +navItem("Genre:", "genre",['Romantic Comedy','Action','Thriller','Horror','Comedy','Drama','Sci-Fi','Music Video','Martial Arts','Animation','Fantasy'])
+        +navItem("Studio:", "studio",[])
+        //- These are additional filters that can be activated
+        //- +navItem("Producer:", "producer",[])
+        //- +navItem("Year:", "theaterdate",[])
+        .text-center.d-none.d-md-inline
+          i#eraser(class="fas fa-eraser hidden")
+          input#filterReset.btn.btn-primary(type="reset" value="Reset Filters")
+            
+        hr.sidebar-divider
+     
+      .text-center.d-none.d-md-inline
+        button#sidebarToggle.btn.rounded-circle.border-0(type='button')
+      
+  // End: Sidebar
+  //- This is main data table
+  #content-wrapper.d-flex.flex-column
+    #content(style='height: 600px;')
+      nav.navbar.navbar-light.navbar-expand.bg-white.shadow.mb-4.topbar.static-top
+        .container-fluid
+          button#sidebarToggleTop.btn.btn-link.d-md-none.rounded-circle.mr-3(type='button')
+            i.fas.fa-bars
+          form.form-inline.d-none.d-sm-inline-block.mr-auto.ml-md-3.my-2.my-md-0.mw-100.navbar-search
+            .input-group
+              input.bg-light.form-control.border-0.small(type='text' id='searchBar' placeholder='Search for ...')
+              .input-group-append
+                button.btn.btn-primary.py-0(type='button')
+                  i.fas.fa-search
+      .container-fluid
+        .d-sm-flex.justify-content-between.align-items-center.mb-4
+          h3.text-dark.mb-0 What will you watch?
+        // Start: Chart
+        .row
+          .col-lg-7.col-xl-8
+            .card.shadow.mb-4
+              .card-header.d-flex.justify-content-between.align-items-center
+                h6.text-primary.font-weight-bold.m-0 All Movies
+                .dropdown.no-arrow
+              .card-body
+                .table-responsive
+                  table.table(id='prodList')
+                    thead
+                      tr
+                        th Title
+                        th Producer
+                        th Genre
+                        th Rating
+                    tbody
+                        - for (var i = 0; i < prodList.length; i++) {
+                            +tableRow(prodList[i]['title'],prodList[i]['producer'],prodList[i]['genre'],prodList[i]['rating'],prodList[i]['id'])
+                        -  } 
+
+          //- Movie Information Panel
+          .col-lg-5.col-xl-4(id='movie-info')
+            .card.shadow.mb-4
+              .card-header.d-flex.justify-content-between.align-items-center
+                h6.text-primary.font-weight-bold.m-0 Movie Info
+                i(class="far fa-plus-square" id='switch')
+                .dropdown.no-arrow
+              .card-body(id='prodInfo' class='hidden')
+                span Select A Movie to Learn More!
+                    hr
+                    h2 Movie Information
+                    div(class="card-body")
+                    p
+                        strong Title:
+                        |  <span id='prodInfoTitle' class="card-title"></span>
+                        br
+                        strong Release Date:
+                        |  <span id='prodInfoYear' class="card-title"></span>
+                        br
+                        strong Producer(s):
+                        |  <span id='prodInfoProducer' class="card-text"></span>
+                        br
+                        strong Genre:
+                        |  <span id='prodInfoGenre' class="card-text"></span>
+                        br
+                        strong Rating:
+                        |  <span id='prodInfoRating' class="card-text"></span>
+                        br
+                        strong Description:
+                        |  <span id='prodInfoDesc' class="card-text"></span>
+                        div(class="row" id="stream-actions")
+                            br
+                            |  <span id='watchLater' class="btn btn-primary stream-actions" style="color: white;">Watch Later</span>
+                            br
+                            |  <span id='watchNow' class="btn btn-primary stream-actions" style="color: white;">Stream Now</span>
+            //- Watch later tab.
+            div(id='watch-later')
+              .card.shadow.mb-4
+                .card-header.py-3
+                  h6.text-primary.font-weight-bold.m-0 Watch Later
+                .card-body
+                  // Start: Card Success
+                  .card.shadow.border-left-success.py-2
+                    .card-body
+                      .row.align-items-center.no-gutters
+                        .col.mr-2
+                          .text-dark.font-weight-bold.h5.mb-0
+                            span Add Movies to Watch Later!
+                  // End: Card Success
+                  .table-responsive
+                    table.table(id='watchLaterList')
+                      thead
+                        tr
+                      tbody
+script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js')
+script(src='/js/theme.js')
+script(src='/js/global.js')
+
+
+

@@ -1,0 +1,16 @@
+//- © 2019 Rocket Software, Inc. or its affiliates. All Rights Reserved
+//- Written by Andrew Gorovoy 
+
+include navOption.pug
+//- This is an html template for a filter. Data is passed through a constructor. In this case, data is filter type and filter options 
+//- which are then passed to a child template
+mixin navItem(title,rel,data)
+    li.nav-item(role='presentation')
+            div
+                a.btn.btn-link.nav-link.collapsed(data-toggle='collapse' aria-expanded='false' aria-controls=rel href='#' + rel role='button')
+                    i.fab.fa-creative-commons-sampling
+                    span(class="filter-header " + rel value='null' name=title)= title
+                div.collapse(id=rel)
+                    .bg-white.border.rounded.py-2.collapse-inner
+                        each val in data
+                            +navOption(rel,val)

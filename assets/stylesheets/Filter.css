@@ -1,0 +1,95 @@
+/* © 2019 Rocket Software, Inc. or its affiliates. All Rights Reserved
+Written by Andrew Gorovoy */
+
+
+
+.filter select {
+  width: 170px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 2px #aaa;
+  margin: 10px;
+  background: #eee;
+}
+
+.filter {
+  text-align: center;
+}
+
+.filter input {
+  margin: 30px;
+  width: 60%;
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #eee;
+}
+
+* {
+  outline: none;
+}
+
+.stream-actions {
+  margin: 5px;
+}
+
+#watch-later {
+  margin-left: 0px;
+}
+
+.hidden {
+  display: none;
+}
+
+div.bg-white.border.rounded.py-2.collapse-inner {
+  width: 192px;
+}
+
+ a.filter-option p {
+  width: 150px;
+  height: auto;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;  
+}
+
+
+
+
+#switch {
+  text-align: right;
+  margin-right: 0;
+  color: #4e73df;
+
+}
+
+h6.text-primary.font-weight-bold.m-0 {
+  padding-right: 11em;
+}
+
+
+#filterReset {
+  width: 3 rem;
+  height: 1.5 rem;
+  margin-bottom: 5px;
+}
+
+.table-responsive {
+  text-align: center;
+}
+
+#no-result {
+  text-align: center;
+  border: #555 solid 1;
+  width: 100%;
+  color: white;
+  background-color: #4e73df;
+  border-radius: 15px;
+  margin-top: 40px;
+  margin: auto 20;
+  display: inline-block;
+  padding: 5px;
+}
