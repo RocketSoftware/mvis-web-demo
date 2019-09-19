@@ -15,10 +15,12 @@ In addition, a blog post and video explanation about the application can be foun
 
 ## Getting Started
 
-### Dependencies 
-* Node.js - Click [here](https://nodejs.org/en/) and install the necessary version for your machine
-* MultiValue Integration Server Community Edition - If this is not installed on your local machine, please follow the installation guide found [here](Placeholder for MVIS Personal Edition installation guide)
-* UniVerse - If UniVerse is not installed on your machine, please follow the installation guide found [here](https://docs.rocketsoftware.com/nxt/gateway.dll/RKBnew20%2Funiverse%2Fprevious%20versions%2Fv11.2.3%2Funiverse_installguide_v1123.pdf)
+### Prequisites / Dependencies 
+* Node.js - Click [here](https://nodejs.org/en/) and install the necessary version for your machine.
+
+* MultiValue Integration Server Community Edition - If MVIS is not installed on your machine, please click the link below and follow the included installation guide [here](https://www.rocketsoftware.com/product-categories/dbms-and-application-servers/rocket-u2-trials)
+
+* UniVerse - If UniVerse is not installed on your machine, please find it [here](https://www.rocketsoftware.com/product-categories/dbms-and-application-servers/rocket-u2-trials) and follow the installation guide that can be found [here](https://docs.rocketsoftware.com/nxt/gateway.dll/RKBnew20%2Funiverse%2Fprevious%20versions%2Fv11.2.3%2Funiverse_installguide_v1123.pdf)
 
 ### Running the Demo Locally
 1. Clone [this](https://github.com/Chimer2017/xdemo) or run `git clone https://github.com/Chimer2017/xdemo.git`
