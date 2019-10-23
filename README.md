@@ -31,6 +31,7 @@ In addition, a blog post and video explanation about the application can be foun
 
 ## Credentials for Login
 Username: agorovoy@rs.com
+
 Password: admin
 
 ### Application Structure
