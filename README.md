@@ -29,7 +29,7 @@ In addition, a blog post and video explanation about the application can be foun
 3. `npm start` to the local server
 4. Navigate to [localhost:5555](http://localhost:5555/)
 
-## Credentials for Login
+### Credentials for Login
 Username: agorovoy@rs.com
 
 Password: admin
