@@ -29,6 +29,10 @@ In addition, a blog post and video explanation about the application can be foun
 3. `npm start` to the local server
 4. Navigate to [localhost:5555](http://localhost:5555/)
 
+## Credentials for Login
+Username: agorovoy@rs.com
+Password: admin
+
 ### Application Structure
 * app.js - The entry point to our application. This file defines our express server. It also requires the routes and models we'll be using in the application.
 * routes/ - This folder contains the route definitions for our API.
