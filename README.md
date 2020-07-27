@@ -1,4 +1,4 @@
-# xdemo - Jess was here
+# xdemo 
 
 This project serves as an example for the new Rocket MVIS tool. The MVIS tool allows for standard RESTful protocols
 to be used with legacy MV applications. 
